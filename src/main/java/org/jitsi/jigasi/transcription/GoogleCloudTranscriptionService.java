@@ -257,7 +257,7 @@ public class GoogleCloudTranscriptionService
                     "encoding");
         }
 
-        builder.setModel("default");
+        builder.setModel("medical_conversation");
         if (logger.isDebugEnabled())
         {
             logger.debug("Using model " + useModel);
