@@ -257,7 +257,7 @@ public class GoogleCloudTranscriptionService
                     "encoding");
         }
 
-        builder.setModel(useModel);
+        builder.setModel("default");
         if (logger.isDebugEnabled())
         {
             logger.debug("Using model " + useModel);
@@ -267,6 +267,9 @@ public class GoogleCloudTranscriptionService
         String languageTag = request.getLocale().toLanguageTag();
         validateLanguageTag(languageTag);
         builder.setLanguageCode(languageTag);
+
+        // Enable automatic punctuation
+        builder.setEnableAutomaticPunctuation(true);
 
         addSpeechContexts(builder);
 
